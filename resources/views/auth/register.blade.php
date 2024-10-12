@@ -1,60 +1,190 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+<!DOCTYPE html>
+<html lang="en">
 
-        <x-validation-errors class="mb-4" />
+<head>
+    <title>Ablepro v8.0 bootstrap admin template by Phoenixcoded</title>
+    <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 11]>
+    	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <meta name="author" content="Phoenixcoded" />
+    <!-- Favicon icon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+    <!-- vendor css -->
+    <link rel="stylesheet" href="{{Asset('Asset/backend/css/style.css')}}">
+    
+    
 
-            <div>
-                <x-label for="name" value="{{ __('Name') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            </div>
+</head>
+<body class="">
+	<!-- [ Pre-loader ] start -->
 
-            <div class="mt-4">
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            </div>
+	<!-- [ Pre-loader ] End -->
+	<!-- [ navigation menu ] start --
+	<!-- [ navigation menu ] end -->
+	<section class="login-signup section-padding">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-7">
+                <div class="signup">
+                    <div class="text-center"><a href="index.html"><img src="{{asset('asset/frontend/images/logos/logo.png')}}" alt="" class="img-fluid"></a></div>
+                    <h3 class="mt-4">Sign Up Here</h3>
+                    <p class="mb-5">Join with us and feel better</p>
+                    <form method="POST" action="{{ route('register') }}">
+                    @csrf
 
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
-
-            <div class="mt-4">
-                <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
-
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-label for="terms">
-                        <div class="flex items-center">
-                            <x-checkbox name="terms" id="terms" required />
-
-                            <div class="ms-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Privacy Policy').'</a>',
-                                ]) !!}
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="name">Username</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Username">
                             </div>
                         </div>
-                    </x-label>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="email-address">Email</label>
+                                <input type="email" class="form-control" name="email" id="email-address" placeholder="Enter a valid mail">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="password-s">Password</label>
+                                <input type="password" class="form-control" id="password-s" name="password" placeholder="A strong password">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="password-s">Confirm Password</label>
+                                <input type="password" class="form-control" id="password-s" name="password_confirmation" placeholder="A strong password">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn btn-primary" type="submit">Sign Up</button>
+                            <p class="mt-5 mb-0">Already a member? <a href="account.html">Log in</a></p>
+                        </div>
+                    </form>
                 </div>
-            @endif
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ms-4">
-                    {{ __('Register') }}
-                </x-button>
             </div>
-        </form>
-    </x-authentication-card>
-</x-guest-layout>
+        </div>
+    </div>
+</section>
+	
+	
+<section class="login-signup section-padding">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-7">
+                <div class="login">
+                    <div class="text-center"><a href="index.html"><img src="{{asset('asset/frontend/images/logos/logo.png')}}" alt="" class="img-fluid"></a></div>
+
+                    <h3 class="mt-4">Login Here</h3>
+                    <p class="mb-5">Enter your valid mail & password</p>
+   
+                    <form method="POST" action="{{ route('login') }}" class="login-form row">
+                    @csrf
+                    <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="loginemail">Email</label>
+                                <input type="text" id="loginemail" class="form-control" name="email" placeholder="Enter mail" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <input type="password" id="loginPassword" class="form-control" name="password" placeholder="Password" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn btn-primary" type="submit">Login</button>
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $errors)
+                                    <li>{{$errors}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                        {{ __('Forgot your password?') }}
+                    </a>
+                            @endif
+                            <p class="mt-5 mb-0">Not a member yet? <a href="{{route('register')}}">Register Here</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- [ Main Content ] end -->
+    <!-- Warning Section start -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 11]>
+        <div class="ie-warning">
+            <h1>Warning!!</h1>
+            <p>You are using an outdated version of Internet Explorer, please upgrade
+               <br/>to any of the following web browsers to access this website.
+            </p>
+            <div class="iew-container">
+                <ul class="iew-download">
+                    <li>
+                        <a href="http://www.google.com/chrome/">
+                            <img src="assets/images/browser/chrome.png" alt="Chrome">
+                            <div>Chrome</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.mozilla.org/en-US/firefox/new/">
+                            <img src="assets/images/browser/firefox.png" alt="Firefox">
+                            <div>Firefox</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.opera.com">
+                            <img src="assets/images/browser/opera.png" alt="Opera">
+                            <div>Opera</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.apple.com/safari/">
+                            <img src="assets/images/browser/safari.png" alt="Safari">
+                            <div>Safari</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="assets/images/browser/ie.png" alt="">
+                            <div>IE (11 & above)</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>Sorry for the inconvenience!</p>
+        </div>
+    <![endif]-->
+    <!-- Warning Section Ends -->
+
+    <!-- Required Js -->
+    <script src="{{Asset('Asset/backend/js/vendor-all.min.js')}}"></script>
+    <script src="{{Asset('Asset/backend/js/plugins/bootstrap.min.js')}}"></script>
+    <script src="{{Asset('Asset/backend/js/ripple.js')}}"></script>
+    <script src="{{Asset('Asset/backend/js/pcoded.min.js')}}"></script>
+
+<!-- Apex Chart -->
+<script src="{{Asset('Asset/backend/js/plugins/apexcharts.min.js')}}"></script>
+
+
+<!-- custom-chart js -->
+<script src="{{Asset('Asset/backend/js/pages/dashboard-main.js')}}"></script>
+</body>
+
+</html>
